@@ -3,7 +3,7 @@ linqtoO
 
 Linq to manipulate array in javascript
 
-    <script src="https://github.com/romuloar/linqtoo/blob/master/linqtoo.min.js"></script>
+    <script src="https://raw.githubusercontent.com/romuloar/linqtoo/master/linqtoo.min.js"></script>
     <script type="text/javascript">        
         var peoples = [
             { "firstName": "Romulo", "lastName": "Ribeiro", "Age": "31", "Gender": "M" },
