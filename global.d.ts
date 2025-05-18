@@ -1,3 +1,8 @@
+interface IGrouping<TKey, TElement> {
+  key: TKey;
+  elements: TElement[];
+}
+
 interface Array<T> {
   aggregate<U>(func: (accumulate: U, item: T) => U, seed: U): U;
   all(predicate: (item: T) => boolean): boolean;  
