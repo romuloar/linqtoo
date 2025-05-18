@@ -1,0 +1,28 @@
+{
+  "name": "linqtoo",
+  "version": "1.0.0",
+  "description": "linqtoO\r =======",
+  "main": "linqtoo.min.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romuloar/linqtoo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romuloar/linqtoo/issues"
+  },
+  "homepage": "https://github.com/romuloar/linqtoo#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}
