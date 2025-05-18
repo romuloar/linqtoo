@@ -12,6 +12,6 @@
     "declaration": false,
     "noEmit": false
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "global.d.ts"],
   "exclude": ["node_modules", "**/*.test.ts"]
 }
