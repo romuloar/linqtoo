@@ -1,18 +1,24 @@
 {
   "name": "linqtoo",
   "version": "1.0.0",
-  "description": "linqtoO\r =======",
-  "main": "linqtoo.min.js",
+  "description": "LINQ-like features for JavaScript/TypeScript",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
-    "build": "tsup"
+    "build": "tsup",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/romuloar/linqtoo.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [ "linq", "collection", "typescript", "javascript" ],
+  "author": "Romulo Ribeiro",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/romuloar/linqtoo/issues"
