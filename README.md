@@ -44,7 +44,7 @@ import 'linqtoo';
 const numbers = [1, 2, 3, 4, 5];
 
 // Filter even numbers
-const evenNumbers = numbers.where(x => x % 2 === 0).toArray();
+const evenNumbers = numbers.where(x => x % 2 === 0);
 console.log(evenNumbers); // [2, 4]
 ```
 
@@ -58,15 +58,15 @@ import 'linqtoo';
 const numbers = [1, 2, 3, 4, 5];
 
 // Filtering
-const greaterThanTwo = numbers.where(x => x > 2).toArray();
+const greaterThanTwo = numbers.where(x => x > 2);
 console.log(greaterThanTwo); // [3, 4, 5]
 
 // Projection
-const doubled = numbers.select(x => x * 2).toArray();
+const doubled = numbers.select(x => x * 2);
 console.log(doubled); // [2, 4, 6, 8, 10]
 
 // Sorting
-const sorted = numbers.orderByDescending(x => x).toArray();
+const sorted = numbers.orderByDescending(x => x);
 console.log(sorted); // [5, 4, 3, 2, 1]
 
 // Aggregation
@@ -89,16 +89,16 @@ const people = [
 ];
 
 // Filter by age
-const adults = people.where(p => p.age >= 21).toArray();
+const adults = people.where(p => p.age >= 21);
 console.log(adults); // [{ name: 'Alice', age: 25 }, { name: 'Bob', age: 30 }]
 
 // Sort by name
-const sortedByName = people.orderBy(p => p.name).toArray();
+const sortedByName = people.orderBy(p => p.name);
 console.log(sortedByName);
 // [{ name: 'Alice', age: 25 }, { name: 'Bob', age: 30 }, { name: 'Charlie', age: 20 }]
 
 // Project to new objects
-const names = people.select(p => p.name).toArray();
+const names = people.select(p => p.name);
 console.log(names); // ['Alice', 'Bob', 'Charlie']
 ```
 
@@ -115,7 +115,7 @@ const result = numbers
   .select(x => x * 3)           // Multiply by 3
   .orderByDescending(x => x)    // Sort in descending order
   .take(2)                      // Take first 2 items
-  .toArray();                   // Convert to array
+  ;                   // Convert to array
 
 console.log(result); // [30, 24]
 ```
@@ -140,7 +140,7 @@ const people: Person[] = [
 const adultNames: string[] = people
   .where(p => p.age >= 21)
   .select(p => p.name)
-  .toArray();
+  ;
 
 console.log(adultNames); // ['Alice', 'Bob']
 ```
@@ -155,7 +155,7 @@ console.log(adultNames); // ['Alice', 'Bob']
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const evenNumbers = numbers.where(x => x % 2 === 0).toArray(); // [2, 4]
+const evenNumbers = numbers.where(x => x % 2 === 0); // [2, 4]
 ```
 
 ### Projection Methods
@@ -166,7 +166,7 @@ const evenNumbers = numbers.where(x => x % 2 === 0).toArray(); // [2, 4]
 
 ```javascript
 const numbers = [1, 2, 3];
-const doubled = numbers.select(x => x * 2).toArray(); // [2, 4, 6]
+const doubled = numbers.select(x => x * 2); // [2, 4, 6]
 ```
 
 #### `selectMany(selector: (item: T, index: number) => U[])`
@@ -178,7 +178,7 @@ const families = [
   { name: 'Smith', members: ['John', 'Jane'] },
   { name: 'Doe', members: ['Sam', 'Lucy'] }
 ];
-const allMembers = families.selectMany(f => f.members).toArray(); // ['John', 'Jane', 'Sam', 'Lucy']
+const allMembers = families.selectMany(f => f.members); // ['John', 'Jane', 'Sam', 'Lucy']
 ```
 
 ### `sequenceEqual`
@@ -212,7 +212,7 @@ const people = [
   { name: 'Bob', age: 30 },
   { name: 'Alice', age: 25 }
 ];
-const byName = people.orderBy(p => p.name).toArray(); // Alice first, then Bob
+const byName = people.orderBy(p => p.name); // Alice first, then Bob
 ```
 
 #### `orderByDescending(keySelector: (item: T) => K)`
@@ -221,7 +221,7 @@ const byName = people.orderBy(p => p.name).toArray(); // Alice first, then Bob
 
 ```javascript
 const numbers = [1, 3, 2, 5, 4];
-const descending = numbers.orderByDescending(x => x).toArray(); // [5, 4, 3, 2, 1]
+const descending = numbers.orderByDescending(x => x); // [5, 4, 3, 2, 1]
 ```
 
 #### `thenBy(keySelector: (item: T) => K)`
@@ -237,7 +237,7 @@ const people = [
 const sorted = people
   .orderBy(p => p.name)
   .thenBy(p => p.age)
-  .toArray();
+  ;
 // [{ name: 'Alice', age: 20 }, { name: 'Alice', age: 25 }, { name: 'Bob', age: 30 }]
 ```
 
@@ -254,7 +254,7 @@ const people = [
 const sorted = people
   .orderBy(p => p.name)
   .thenByDescending(p => p.age)
-  .toArray();
+  ;
 // [{ name: 'Alice', age: 25 }, { name: 'Alice', age: 20 }, { name: 'Bob', age: 30 }]
 ```
 
@@ -453,14 +453,14 @@ const emptySingleOrDefault = empty.singleOrDefault(null, 0); // 0
 
 ```javascript
 const numbers = [1, 2, 2, 3, 3, 3];
-const distinct = numbers.distinct().toArray(); // [1, 2, 3]
+const distinct = numbers.distinct(); // [1, 2, 3]
 
 const people = [
   { id: 1, name: 'Alice' },
   { id: 2, name: 'Bob' },
   { id: 1, name: 'Alice' }
 ];
-const distinctById = people.distinct(p => p.id).toArray(); // [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }]
+const distinctById = people.distinct(p => p.id); // [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }]
 ```
 
 #### `union(second: T[], keySelector?: (item: T) => K)`
@@ -470,7 +470,7 @@ const distinctById = people.distinct(p => p.id).toArray(); // [{ id: 1, name: 'A
 ```javascript
 const first = [1, 2, 3];
 const second = [3, 4, 5];
-const union = first.union(second).toArray(); // [1, 2, 3, 4, 5]
+const union = first.union(second); // [1, 2, 3, 4, 5]
 ```
 
 #### `intersect(second: T[], keySelector?: (item: T) => K)`
@@ -480,7 +480,7 @@ const union = first.union(second).toArray(); // [1, 2, 3, 4, 5]
 ```javascript
 const first = [1, 2, 3];
 const second = [3, 4, 5];
-const intersect = first.intersect(second).toArray(); // [3]
+const intersect = first.intersect(second); // [3]
 ```
 
 #### `except(second: T[], keySelector?: (item: T) => K)`
@@ -490,7 +490,7 @@ const intersect = first.intersect(second).toArray(); // [3]
 ```javascript
 const first = [1, 2, 3];
 const second = [3, 4, 5];
-const except = first.except(second).toArray(); // [1, 2]
+const except = first.except(second); // [1, 2]
 ```
 
 ### Other Methods
@@ -500,7 +500,7 @@ const except = first.except(second).toArray(); // [1, 2]
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const firstThree = numbers.take(3).toArray(); // [1, 2, 3]
+const firstThree = numbers.take(3); // [1, 2, 3]
 ```
 
 #### `takeWhile(predicate: (item: T, index: number) => boolean)`
@@ -508,7 +508,7 @@ const firstThree = numbers.take(3).toArray(); // [1, 2, 3]
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const lessThanFour = numbers.takeWhile(x => x < 4).toArray(); // [1, 2, 3]
+const lessThanFour = numbers.takeWhile(x => x < 4); // [1, 2, 3]
 ```
 
 #### `skip(count: number)`
@@ -516,7 +516,7 @@ const lessThanFour = numbers.takeWhile(x => x < 4).toArray(); // [1, 2, 3]
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const skipTwo = numbers.skip(2).toArray(); // [3, 4, 5]
+const skipTwo = numbers.skip(2); // [3, 4, 5]
 ```
 
 #### `skipWhile(predicate: (item: T, index: number) => boolean)`
@@ -524,7 +524,7 @@ const skipTwo = numbers.skip(2).toArray(); // [3, 4, 5]
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5, 1];
-const skipLessThanThree = numbers.skipWhile(x => x < 3).toArray(); // [3, 4, 5, 1]
+const skipLessThanThree = numbers.skipWhile(x => x < 3); // [3, 4, 5, 1]
 ```
 
 #### `groupBy(keySelector: (item: T) => K, valueSelector?: (item: T) => V)`
@@ -537,7 +537,7 @@ const people = [
   { age: 25, name: 'Bob' },
   { age: 30, name: 'Charlie' }
 ];
-const groups = people.groupBy(p => p.age).toArray();
+const groups = people.groupBy(p => p.age);
 /*
 [
   { key: 30, values: [{ age: 30, name: 'Alice' }, { age: 30, name: 'Charlie' }] },
@@ -565,7 +565,7 @@ const customerOrders = customers.join(
   c => c.id,
   o => o.customerId,
   (customer, order) => ({ customerName: customer.name, product: order.product })
-).toArray();
+);
 /*
 [
   { customerName: 'Alice', product: 'Apple' },
