@@ -3,7 +3,7 @@
 LINQ-like methods for JavaScript/TypeScript arrays.
 
 [![NPM Version](https://img.shields.io/npm/v/linqtoo.svg)](https://www.npmjs.com/package/linqtoo)
-[![License](https://img.shields.io/npm/l/linqtoo.svg)](https://github.com/romuloar/linqtoo/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/romuloar/linqtoo/blob/master/LICENSE)
 
 ## Table of Contents
 
