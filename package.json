@@ -1,6 +1,6 @@
 {
   "name": "linqtoo",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Extends TypeScript/JavaScript arrays with powerful LINQ-like query and manipulation methods.",
   "main": "dist/index.js",
   "module": "dist/index.js",

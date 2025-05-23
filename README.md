@@ -16,21 +16,21 @@ npm install linqtoo
 
 | Group name                | Methods | Group name                | Methods |
 |:---------------------------:|:----------------------------|:---------------------------:|:----------------------------|
-| **🔢 Aggregation & Quantifiers** | 🔸 [AggregateLinq](#aggregatelinq)<br/>🔸 [AllLinq](#alllinq)<br/>🔸 [AnyLinq](#anylinq)<br/>🔸 [AverageLinq](#averagelinq)<br/>🔸 [ContainsLinq](#containslinq)<br/>🔸 [CountLinq](#countlinq)<br/>🔸 [MaxLinq](#maxlinq)<br/>🔸 [MinLinq](#minlinq)<br/>🔸 [SumLinq](#sumlinq) | **🔗 Combination** | 🔸 [ConcatLinq](#concatlinq)<br/>🔸 [ZipLinq](#ziplinq) |
-| **🎯 Element Retrieval** | 🔸 [ElementAtLinq](#elementatlinq)<br/>🔸 [ElementAtOrDefaultLinq](#elementatordefaultlinq)<br/>🔸 [FirstLinq](#firstlinq)<br/>🔸 [FirstOrDefaultLinq](#firstordefaultlinq)<br/>🔸 [LastLinq](#lastlinq)<br/>🔸 [LastOrDefaultLinq](#lastordefaultlinq)<br/>🔸 [SingleLinq](#singlelinq)<br/>🔸 [SingleOrDefaultLinq](#singleordefaultlinq) | **🔎 Filtering** | 🔸 [DistinctByLinq](#distinctbylinq)<br/>🔸 [DistinctLinq](#distinctlinq)<br/>🔸 [WhereLinq](#wherelinq) |
-| **🧩 Grouping** | 🔸 [GroupByLinq](#groupbylinq) | **🔗 Joins** | 🔸 [JoinLinq](#joinlinq) |
-| **🛠️ Other Utilities** | 🔸 [AppendLinq](#appendlinq)<br/>🔸 [DefaultIfEmptyLinq](#defaultifemptylinq)<br/>🔸 [EmptyLinq](#emptylinq)<br/>🔸 [PrependLinq](#prependlinq)<br/>🔸 [RangeLinq](#rangelinq)<br/>🔸 [RepeatLinq](#repeatlinq)<br/>🔸 [ReverseLinq](#reverselinq)<br/>🔸 [SequenceEqualLinq](#sequenceequallinq) | **✂️ Partitioning** | 🔸 [ChunkLinq](#chunklinq)<br/>🔸 [SkipLinq](#skiplinq)<br/>🔸 [SkipWhileLinq](#skipwhilelinq)<br/>🔸 [TakeLinq](#takelinq)<br/>🔸 [TakeWhileLinq](#takewhilelinq) |
-| **🎨 Projection** | 🔸 [SelectLinq](#selectlinq)<br/>🔸 [SelectManyLinq](#selectmanylinq) | **🔄 Set Operations** | 🔸 [ExceptLinq](#exceptlinq)<br/>🔸 [IntersectLinq](#intersectlinq)<br/>🔸 [UnionLinq](#unionlinq) |
-| **↕️ Sorting** | 🔸 [OrderByLinq](#orderbylinq)<br/>🔸 [OrderByDescendingLinq](#orderbydescendinglinq)<br/>🔸 [ThenByLinq](#thenbylinq)<br/>🔸 [ThenByDescendingLinq](#thenbydescendinglinq) |  |  |
+| **🔢 Aggregation & Quantifiers** | 🔸 [aggregateLinq](#aggregateLinq)<br/>🔸 [allLinq](#allLinq)<br/>🔸 [anyLinq](#anyLinq)<br/>🔸 [averageLinq](#averageLinq)<br/>🔸 [containsLinq](#containsLinq)<br/>🔸 [countLinq](#countLinq)<br/>🔸 [maxLinq](#maxLinq)<br/>🔸 [minLinq](#minLinq)<br/>🔸 [sumLinq](#sumLinq) | **🔗 Combination** | 🔸 [concatLinq](#concatLinq)<br/>🔸 [zipLinq](#zipLinq) |
+| **🎯 Element Retrieval** | 🔸 [elementAtLinq](#elementAtLinq)<br/>🔸 [elementAtOrDefaultLinq](#elementAtOrDefaultLinq)<br/>🔸 [firstLinq](#firstLinq)<br/>🔸 [firstOrDefaultLinq](#firstOrDefaultLinq)<br/>🔸 [lastLinq](#lastLinq)<br/>🔸 [lastOrDefaultLinq](#lastOrDefaultLinq)<br/>🔸 [singleLinq](#singleLinq)<br/>🔸 [singleOrDefaultLinq](#singleOrDefaultLinq) | **🔎 Filtering** | 🔸 [distinctByLinq](#distinctByLinq)<br/>🔸 [distinctLinq](#distinctLinq)<br/>🔸 [whereLinq](#whereLinq) |
+| **🧩 Grouping** | 🔸 [groupByLinq](#groupByLinq) | **🔗 Joins** | 🔸 [joinLinq](#joinLinq) |
+| **🛠️ Other Utilities** | 🔸 [appendLinq](#appendLinq)<br/>🔸 [defaultIfemptyLinq](#defaultIfemptyLinq)<br/>🔸 [emptyLinq](#emptyLinq)<br/>🔸 [prependLinq](#prependLinq)<br/>🔸 [rangeLinq](#rangeLinq)<br/>🔸 [repeatLinq](#repeatLinq)<br/>🔸 [reverseLinq](#reverseLinq)<br/>🔸 [sequenceEqualLinq](#sequenceEqualLinq) | **✂️ Partitioning** | 🔸 [chunkLinq](#chunkLinq)<br/>🔸 [skipLinq](#skipLinq)<br/>🔸 [skipWhileLinq](#skipWhileLinq)<br/>🔸 [takeLinq](#takeLinq)<br/>🔸 [takeWhileLinq](#takeWhileLinq) |
+| **🎨 Projection** | 🔸 [selectLinq](#selectLinq)<br/>🔸 [selectManyLinq](#selectManyLinq) | **🔄 Set Operations** | 🔸 [exceptLinq](#exceptLinq)<br/>🔸 [intersectLinq](#intersectLinq)<br/>🔸 [unionLinq](#unionLinq) |
+| **↕️ Sorting** | 🔸 [orderByLinq](#orderByLinq)<br/>🔸 [orderByDescendingLinq](#orderByDescendingLinq)<br/>🔸 [thenByLinq](#thenByLinq)<br/>🔸 [thenByDescendingLinq](#thenByDescendingLinq) |  |  |
 ### 🔢 Aggregation & Quantifiers
 
-### AggregateLinq
+### aggregateLinq
 
 **aggregateLinq** combines all elements of an array into a single result using a seed value and an accumulator function
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [1, 2, 3, 4];
 const sum = numbers.aggregateLinq(0, (acc, val) => acc + val);
 console.log(sum); // Output: 10
@@ -46,13 +46,13 @@ console.log(result); // Output: 5
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### AllLinq
+### allLinq
 
 **allLinq** method tests whether all elements in an array satisfy a given condition (predicate). If no predicate is provided, it returns true only if all elements are truthy. Returns false otherwise. Empty arrays always return true.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [2, 4, 6, 8];
 const mixed = [2, 3, 6];
 const empty: number[] = [];
@@ -66,14 +66,14 @@ console.log([1, 0, true].allLinq());             // false, 0 is falsy
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 
-### AnyLinq
+### anyLinq
 
 **anyLinq** determines if the array contains any elements that satisfy an optional predicate.  
 If no predicate is provided, it checks if the array has any elements at all.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [0, 1, 2, 3];
 console.log(numbers.anyLinq()); // true (array not empty)
 
@@ -92,13 +92,13 @@ console.log(people.anyLinq(p => p.name === 'Bia')); // true
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### AverageLinq
+### averageLinq
 
 **averageLinq** calculates the arithmetic mean of a sequence of numeric values. Returns the average value as a decimal number. Can be used with or without a selector function to specify which property to average. Throws an exception if the sequence is empty or contains non-numeric values.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [10, 20, 30];
 console.log('Average:', numbers.averageLinq()); // Output: 20
 
@@ -116,13 +116,13 @@ console.log('Empty average:', [].averageLinq()); // Output: NaN
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### ContainsLinq
+### containsLinq
 
 **containsLinq** method checks whether an array includes a specific item using strict equality (===). For objects, it checks by reference, not value.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 console.log([1, 2, 3].containsLinq(2)); // true
 console.log([1, 2, 3].containsLinq(4)); // false
 console.log(['apple', 'banana'].containsLinq('apple')); // true
@@ -136,13 +136,13 @@ console.log(users.containsLinq({ id: 1 })); // false (different reference)
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### CountLinq
+### countLinq
 
 **countLinq** method returns the number of elements that satisfy an optional predicate function.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 // Count all items in the array
 const numbers = [1, 2, 3, 4, 5];
 console.log(numbers.countLinq()); // Output: 5
@@ -159,13 +159,13 @@ console.log(truthyCount); // Output: 2 ('hello' and 42)
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### MaxLinq
+### maxLinq
 
 **maxLinq** method returns the largest numeric value in the array. Optionally accepts a selector function to extract numeric values from complex items.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [3, 7, 2, 8];
 console.log(numbers.maxLinq()); // Output: 8
 
@@ -179,13 +179,13 @@ console.log(people.maxLinq(p => p.age)); // Output: 30
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### MinLinq
+### minLinq
 
 **minLinq** returns the smallest numeric value in the array. Optionally accepts a selector function to extract numeric values from complex items.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [3, 7, 2, 8];
 console.log(numbers.minLinq()); // Output: 2
 
@@ -199,14 +199,14 @@ console.log(people.minLinq(p => p.age)); // Output: 22
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### SumLinq
+### sumLinq
 
 **sumLinq** method returns the total sum of all elements, 
 optionally applying a selector function before summing.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const arr = [10, 20, 30, 40];
 
 console.log('Total:', arr.sumLinq()); // Output: 100
@@ -219,13 +219,13 @@ console.log('Float sum:', mixed.sumLinq()); // Output: 9.0
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### 🔗 Combination
-### ConcatLinq
+### concatLinq
 
 **concatLinq** method merges two arrays into a single array without modifying the originals.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 // Test 1: concatenating numeric arrays
 const a = [1, 2, 3];
 const b = [4, 5, 6];
@@ -264,13 +264,13 @@ console.log('Test 5:', result5);
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### ZipLinq
+### zipLinq
 
 **zipLinq** method creates a new array by combining elements from two arrays using a selector function.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [1, 2, 3];
 const letters = ['A', 'B', 'C', 'D'];
 
@@ -288,13 +288,13 @@ console.log(userInfo);
 
 ### 🎯 Element Retrieval
 
-### ElementAtLinq
+### elementAtLinq
 
 **elementAtLinq** returns the element at the specified zero-based index in the array. If the index is out of range (negative or beyond the last element), it returns undefined. 
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const arr = ['apple', 'banana', 'cherry'];
 
 console.log(arr.elementAtLinq(0)); // Output: apple
@@ -307,13 +307,13 @@ console.log(emptyArr.elementAtLinq(0)); // Output: undefined
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### ElementAtOrDefaultLinq
+### elementAtOrDefaultLinq
 
 **elementAtOrDefaultLinq** method returns the element at the specified zero-based index in the array. If the index is out of range (negative or beyond the last element), it returns the provided default value if specified, or undefined otherwise. 
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const arr = ['apple', 'banana', 'cherry'];
 
 console.log(arr.elementAtOrDefaultLinq(0)); // Output: apple
@@ -327,13 +327,13 @@ console.log(emptyArr.elementAtOrDefaultLinq(0, 42)); // Output: 42
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### FirstLinq
+### firstLinq
 
 **firstLinq** method returns the first element of the array, or the first that matches the predicate if one is provided. If no elements exist or no match is found, it returns undefined.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [10, 20, 30];
 console.log(numbers.firstLinq()); // Output: 10
 
@@ -349,13 +349,13 @@ console.log(names.firstLinq(name => name.startsWith('B'))); // Output: "Bia"
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### FirstOrDefaultLinq
+### firstOrDefaultLinq
 
 **firstOrDefaultLinq** method returns the first element of the array that matches the given predicate, or the first element if no predicate is provided. If the array is empty or no match is found, it returns the provided defaultValue, or undefined if none is given. 
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [5, 10, 15];
 console.log(numbers.firstOrDefaultLinq()); // Output: 5
 
@@ -373,13 +373,13 @@ console.log(names.firstOrDefaultLinq(name => name.startsWith('C'), 'Unknown')); 
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### LastLinq
+### lastLinq
 
 **lastLinq** method returns the last element of the array, or the last element that matches the given predicate. If the array is empty or no match is found, it returns undefined.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [10, 20, 30];
 console.log(numbers.lastLinq()); // Output: 30
 
@@ -394,13 +394,13 @@ console.log(names.lastLinq(name => name.startsWith('B'))); // Output: "Bia"
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### LastOrDefaultLinq
+### lastOrDefaultLinq
 
 **lastOrDefaultLinq** method returns the last element of the array that matches the given predicate or the last element if no predicate is provided. If no element matches or the array is empty, it returns the supplied default value or undefined if no default is given.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [10, 20, 30];
 console.log(numbers.lastOrDefaultLinq()); // Output: 30
 
@@ -417,13 +417,13 @@ console.log(names.lastOrDefaultLinq(name => name.startsWith('Z'), 'DefaultName')
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### SingleLinq
+### singleLinq
 
 **singleLinq** method returns the only element in the array that matches the given predicate or, if no predicate is provided, returns the single element in the array. Throws an error if no elements or more than one element match.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [10];
 console.log(numbers.singleLinq()); // Output: 10
 
@@ -452,13 +452,13 @@ try {
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### SingleOrDefaultLinq
+### singleOrDefaultLinq
 
 **singleOrDefaultLinq** method returns the single element in the array that satisfies the optional predicate. If no elements satisfy the predicate, it returns the provided default value or undefined if no default is specified. If more than one element satisfies the predicate (or exists in the array when no predicate is provided), it throws an error. This method is useful when you expect zero or one element to match a condition and want to safely handle the case when none match.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const arr = [10, 20, 30, 20];
 
 try {
@@ -496,13 +496,13 @@ console.log(emptyArr.singleOrDefault()); // undefined
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### 🔎 Filtering
-### DistinctByLinq
+### distinctByLinq
 
 **distinctByLinq** method returns a new array containing only the first occurrence of each unique element, based on the value returned by the selector function.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const users = [
   { id: 1, name: 'Romulo', age: 30 },
   { id: 2, name: 'Bia', age: 25 },
@@ -556,13 +556,13 @@ console.log('Distinct by name + age:', byNameAndAge);
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### DistinctLinq
+### distinctLinq
 
 **distinctLinq** method returns a new array with all duplicate elements removed. If a selector function is provided, uniqueness is determined by the value returned from the selector.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [1, 2, 2, 3, 1];
 console.log(numbers.distinctLinq()); // [1, 2, 3]
 
@@ -580,13 +580,13 @@ console.log(users.distinctLinq(user => user.id)); // [{ id: 1, name: 'Romulo' },
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### WhereLinq
+### whereLinq
 
 **whereLinq** method filters the elements of an array based on a provided predicate function and returns a new array containing all elements that satisfy the predicate. 
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [1, 2, 3, 4, 5];
 const evens = numbers.whereLinq(x => x % 2 === 0);
 console.log(evens); // Output: [2, 4]
@@ -617,13 +617,13 @@ console.log(emptyArr.whereLinq(x => true)); // Output: []
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### 🧩 Grouping
-### GroupByLinq
+### groupByLinq
 
 **groupByLinq** method groups the elements of an array based on a key returned by a selector function. It returns an object where each key maps to an array of elements sharing that key.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [1, 2, 3, 4, 5, 6];
 
 const users = [
@@ -669,14 +669,14 @@ console.log(numbers.groupByLinq(n => `mod${n % 3}`));
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### 🔗 Joins
-### JoinLinq
+### joinLinq
 
 **joinLinq** method joins two arrays by matching keys from each element.
 It returns a new array with elements projected from the matching pairs.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 interface User {
   id: number;
   name: string;
@@ -833,13 +833,13 @@ console.log(clientsWithAddresses);
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### 🛠️ Other Utilities
-### AppendLinq
+### appendLinq
 
 **appendLinq** method returns a new array with the specified item added at the end of the sequence. It does not modify the original array.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [1, 2, 3];
 const appended = numbers.append(4);
 console.log(appended); // [1, 2, 3, 4]
@@ -853,34 +853,34 @@ console.log(users.append(newUser)); // [{ name: 'Romulo' }, { name: 'Bia' }]
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### DefaultIfEmptyLinq
+### defaultIfemptyLinq
 
-**defaultIfEmptyLinq** method returns the original array if it has elements; otherwise, it returns a new array with the provided default value. Useful for ensuring a fallback value when dealing with empty sequences.  
+**defaultIfemptyLinq** method returns the original array if it has elements; otherwise, it returns a new array with the provided default value. Useful for ensuring a fallback value when dealing with empty sequences.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const emptyNumbers: number[] = [];
-const result1 = emptyNumbers.defaultIfEmptyLinq(0);
+const result1 = emptyNumbers.defaultIfemptyLinq(0);
 console.log(result1); // [0]
 
 const names = ['Romulo'];
-const result2 = names.defaultIfEmptyLinq('DefaultName');
+const result2 = names.defaultIfemptyLinq('DefaultName');
 console.log(result2); // ['Romulo']
 
 const emptyNames: string[] = [];
-const result3 = emptyNames.defaultIfEmptyLinq('NoName');
+const result3 = emptyNames.defaultIfemptyLinq('NoName');
 console.log(result3); // ['NoName']
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### EmptyLinq
+### emptyLinq
 
 **emptyLinq** method that returns a new empty array of the specified generic type. It provides a convenient way to create empty arrays without manually typing [], helping improve code readability and consistency.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const emptyNumbers = Array.empty<number>();
 console.log(emptyNumbers); // []
 
@@ -892,13 +892,13 @@ console.log(emptyObjects); // []
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### PrependLinq
+### prependLinq
 
 **prependLinq** method adds a single element to the beginning of an array and returns a new array without modifying the original.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const nums = [2, 3];
 const updatedNums = nums.prepend(1);
 console.log(updatedNums); // [1, 2, 3]
@@ -912,25 +912,25 @@ console.log(emptyArray); // [42]
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### RangeLinq
+### rangeLinq
 
 **rangeLinq**  method generates a sequence of integers, starting from start and producing count consecutive numbers.
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = Array.rangeLinq(1, 5);
 console.log(numbers); // [1, 2, 3, 4, 5]
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### RepeatLinq
+### repeatLinq
 
 **repeatLinq** method creates a new array that contains a specified value repeated a given number of times.   
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const repeated = Array.repeatLinq('Romulo', 3);
 console.log(repeated); // ['Romulo', 'Romulo', 'Romulo']
 
@@ -945,13 +945,13 @@ console.log(repeatedObj[0] === repeatedObj[1]); // true (mesma referência)
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### ReverseLinq
+### reverseLinq
 
 **reverseLinq** method returns a new array with the elements of the current array in reverse order. This method does **not** mutate the original array.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 // Test 1: Reverse numbers
 const numbers = [1, 2, 3, 4];
 const reversedNumbers = numbers.reverseLinq();
@@ -978,15 +978,15 @@ console.log('Test 4:', original);
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### SequenceEqualLinq
+### sequenceEqualLinq
 
 **sequenceEqualLinq** method compares two arrays for equality by checking that they have the same elements in the same order.
 An optional comparer function can be provided for custom comparison logic (e.g., comparing objects by properties).
 Defaults to strict equality (===) when no comparer is supplied.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 // Test 1: Primitive values, same content and order
 const r1 = [1, 2, 3].sequenceEqualLinq([1, 2, 3]);
 console.log('Test 1:', r1); // Expected: true
@@ -1012,14 +1012,14 @@ console.log('Test 5:', r5); // Expected: true
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### ✂️ Partitioning
-### ChunkLinq
+### chunkLinq
 
 **chunkLinq** method splits a sequence into chunks (batches) of a specified size.  
   Returns an array of arrays, each inner array is a chunk of the original sequence.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
 console.log('Test 1: chunkLinq(3)');
@@ -1047,13 +1047,13 @@ try {
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### SkipLinq
+### skipLinq
 
 **skipLinq** method skips the first N elements and returns the remaining ones.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const names = ['Romulo', 'Bia', 'Felipe', 'Lucas', 'Ana'];
 
 console.log(names.skipLinq(2)); // ['Felipe', 'Lucas', 'Ana']
@@ -1063,13 +1063,13 @@ console.log([].skipLinq(2));     // []
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### SkipWhileLinq
+### skipWhileLinq
 
 **skipWhileLinq** method skips elements at the beginning of the array while the condition is true, then includes all remaining elements starting from the first one that fails the condition.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const numbers = [1, 2, 3, 10, 5, 6];
 
 const result = numbers.skipWhileLinq(n => n < 10);
@@ -1077,13 +1077,13 @@ console.log(result); // [10, 5, 6]
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### TakeLinq
+### takeLinq
 
 **takeLinq** method returns the first N elements of the array.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const names = ['Romulo', 'Bia', 'Felipe', 'Lucas', 'Ana'];
 
 console.log(names.takeLinq(2)); // ['Romulo', 'Bia']
@@ -1093,13 +1093,13 @@ console.log([].takeLinq(3));     // []
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### TakeWhileLinq
+### takeWhileLinq
 
 **takeWhileLinq** method returns elements from the array as long as the predicate returns true. Stops at the first false.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const ages = [21, 25, 28, 18, 30, 35];
 
 const under30 = ages.takeWhileLinq(age => age < 30);
@@ -1113,13 +1113,13 @@ console.log(untilFelipe); // ['Romulo', 'Bia']
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### 🎨 Projection
-### SelectLinq
+### selectLinq
 
 **selectLinq** method projects each element of a sequence into a new form by applying a selector function.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 interface User {
   id: number;
   name: string;
@@ -1137,13 +1137,13 @@ console.log(names); // Output: ['Romulo', 'Bia', 'Felipe']
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### SelectManyLinq
+### selectManyLinq
 
 **selectManyLinq** method projects each element of a sequence to an array and flattens the resulting arrays into one sequence.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const data = [
   { id: 1, tags: ['red', 'blue'] },
   { id: 2, tags: ['green'] },
@@ -1156,13 +1156,13 @@ console.log(tags); // ['red', 'blue', 'green']
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### 🔄 Set Operations
-### ExceptLinq
+### exceptLinq
 
 **exceptLinq** method returns the elements of the first array that are not present in the second array  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 // Test 1: Numbers
 const numbers1 = [1, 2, 3, 4];
 const numbers2 = [2, 4];
@@ -1198,13 +1198,13 @@ try {
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### IntersectLinq
+### intersectLinq
 
 **intersectLinq** method returns the common elements shared by two arrays, eliminating duplicates.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 // Test 1: Common elements between number arrays
 const a = [1, 2, 3, 4];
 const b = [3, 4, 5, 6];
@@ -1247,13 +1247,13 @@ try {
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### UnionLinq
+### unionLinq
 
 **unionLinq** method combines two arrays and returns a new array containing distinct elements from both. You can optionally provide a custom comparer function to define equality logic, such as when comparing objects. Without a comparer, strict equality (===) is used.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 // Test 1
 const u1 = [1, 2, 3].unionLinq([3, 4, 5]);
 console.log('Test 1:', u1); // Expected: [1, 2, 3, 4, 5]
@@ -1279,13 +1279,13 @@ console.log('Test 5:', u5); // Expected: [1, 2, 3]
 <hr style="border: 1; height: 2px; background: #eee;" />
 
 ### ↕️ Sorting
-### OrderByLinq
+### orderByLinq
 
 **orderByLinq** method sorts the elements of a sequence in ascending order according to a key selector function.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 console.log('Test: orderByLinq');
 const users = [
   { id: 3, name: 'Felipe' },
@@ -1303,13 +1303,13 @@ console.log(ordenadoAsc);
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### OrderByDescendingLinq
+### orderByDescendingLinq
 
 **orderByDescendingLinq** method sorts the elements of a sequence in descending order according to a key selector function.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 const nums = [5, 3, 9, 1];
 const sortedNums = nums.orderByDescendingLinq(x => x);
 console.log(sortedNums);
@@ -1338,13 +1338,13 @@ console.log(sortedUserName);
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### ThenByLinq
+### thenByLinq
 
 **thenByLinq** method performs a secondary ascending sort on a sequence that has already been ordered.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 console.log('Test: thenByLinq');
 const pessoas1 = [
   { nome: 'Romulo', idade: 30 },
@@ -1366,13 +1366,13 @@ Expected:
 ```
 <hr style="border: 1; height: 2px; background: #eee;" />
 
-### ThenByDescendingLinq
+### thenByDescendingLinq
 
 **thenByDescendingLinq** method performs a secondary descending sort on a sequence that has already been ordered.  
 
-#### Exemples:
+#### Examples:
 
-```
+```typescript
 console.log('Test: thenByDescendingLinq');
 const pessoas2 = [
   { nome: 'Romulo', idade: 30 },
