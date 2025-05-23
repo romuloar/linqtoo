@@ -1,6 +1,6 @@
 # LinqToo
 
-Welcome to **LinqToo** — a powerful TypeScript library inspired by C# LINQ, designed to bring the magic of expressive, fluent querying to your arrays! 🚀
+Welcome to **LinqToo** — a powerful TypeScript/JavaScript library inspired by C# LINQ, designed to bring the magic of expressive, fluent querying to your arrays! 🚀
 
 Easily manipulate, filter, group, and combine data with familiar methods — making your code cleaner, more readable, and more fun to write.
 
