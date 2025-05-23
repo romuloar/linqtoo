@@ -1,8 +1,5 @@
-import { addZipLinq } from '../../src/methods/combination/zipLinq';
+import '../../src/index';
 
-beforeAll(() => {
-    addZipLinq();
-});
 
 describe('zip', () => {
     it('should zip two arrays of same length', () => {

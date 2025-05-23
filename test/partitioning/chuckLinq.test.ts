@@ -1,9 +1,4 @@
-import { addChuckLinq } from '../../src/methods/partitioning/chuckLinq';
-
-beforeAll(() => {
-    addChuckLinq();
-});
-
+import '../../src/index';
 
 describe('chunkLinq', () => {
     test('splits array into chunks of given size', () => {

@@ -1,8 +1,4 @@
-import { addDistinctByLinq } from '../../src/methods/filtering/distinctByLinq';
-
-beforeAll(() => {
-    addDistinctByLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.distinctBy', () => {
     it('should return distinct elements by id', () => {

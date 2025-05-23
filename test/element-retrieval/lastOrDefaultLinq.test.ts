@@ -1,8 +1,4 @@
-import { addLastOrDefaultLinq } from '../../src/methods/element-retrieval/lastOrDefaultLinq';
-
-beforeAll(() => {
-    addLastOrDefaultLinq();
-});
+import '../../src/index';
 
 describe('lastOrDefault', () => {
     it('should return the last element in a non-empty array', () => {

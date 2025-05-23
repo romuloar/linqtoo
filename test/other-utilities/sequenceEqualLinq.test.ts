@@ -1,8 +1,4 @@
-import { addSequenceEqualLinq } from '../../src/methods/other-utilities/sequenceEqualLinq';
-
-beforeAll(() => {
-  addSequenceEqualLinq();
-});
+import '../../src/index';
 
 describe('sequenceEqualLinq', () => {
     it('should return true for same numbers', () => {

@@ -1,7 +1,4 @@
-import { addConcatLinq } from '../../src/methods/combination/concatLinq';
- beforeAll(() => {
-     addConcatLinq();
-  });
+import '../../src/index';
 
 describe('concatLinq', () => {
 

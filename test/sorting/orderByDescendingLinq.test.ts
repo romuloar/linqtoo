@@ -1,8 +1,5 @@
-import { addOrderByDescendingLinq } from '../../src/methods/sorting/orderByDescendingLinq';
+import '../../src/index';
 
-beforeAll(() => {
-  addOrderByDescendingLinq();
-});
 
 describe('orderByDescendingLinq', () => {
     it('should sort numbers in descending order', () => {

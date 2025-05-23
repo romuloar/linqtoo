@@ -1,8 +1,5 @@
-import { addSelectManyLinq } from '../../src/methods/projection/selectManyLinq';
+import '../../src/index';
 
-beforeAll(() => {
-    addSelectManyLinq();
-});
 
 describe('selectManyLinq', () => {
     it('should flatten arrays returned by selector', () => {

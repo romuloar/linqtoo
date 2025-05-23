@@ -1,8 +1,4 @@
-import { addDistinctLinq } from '../../src/methods/filtering/distinctLinq';
-
-beforeAll(() => {
-    addDistinctLinq();
-});
+import '../../src/index';
 
 describe('distinct', () => {
     it('should remove duplicate primitive values', () => {

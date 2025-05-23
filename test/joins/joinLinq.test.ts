@@ -1,8 +1,4 @@
-import { addJoinLinq } from '../../src/methods/joins/joinLinq';
-
-beforeAll(() => {
-    addJoinLinq();
-});
+import '../../src/index';
 
 describe('joinLinq', () => {
     const users = [

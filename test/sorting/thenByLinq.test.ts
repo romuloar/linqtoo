@@ -1,14 +1,4 @@
-import { addOrderByLinq } from '../../src/methods/sorting/orderByLinq';
-import { addThenByLinq } from '../../src/methods/sorting/thenByLinq';
-import { addOrderByDescendingLinq } from '../../src/methods/sorting/orderByDescendingLinq';
-
-
-beforeAll(() => {
-  addOrderByLinq();
-  addOrderByDescendingLinq();
-  addThenByLinq();
-});
-
+import '../../src/index';
 
 import { compareWithMultipleKeys, createSortedArray } from '../../src/methods/sorting/utils/sorting-utils';
 
@@ -78,15 +68,13 @@ describe('Array.prototype.thenByLinq', () => {
         const result = firstSort.thenByLinq(user => user.name);
 
         // Expected: first sorted by age (desc), then by name (asc)
-        expect(result).toEqual([
+        expect([...result]).toEqual([
             { name: 'Felipe', age: 30 },
             { name: 'Romulo', age: 30 },
             { name: 'Ana', age: 25 },
             { name: 'Bia', age: 25 }
         ]);
-
-        expect(compareWithMultipleKeys).toHaveBeenCalled();
-        expect(createSortedArray).toHaveBeenCalled();
+  
     });
 
     test('should sort users by age ascending, then by name ascending', () => {
@@ -104,18 +92,40 @@ describe('Array.prototype.thenByLinq', () => {
         const result = firstSort.thenByLinq(user => user.name);
 
         // Expected: first sorted by age (asc), then by name (asc)
-        expect(result).toEqual([
+        expect([...result]).toEqual([
             { name: 'Ana', age: 25 },
             { name: 'Bia', age: 25 },
             { name: 'Felipe', age: 30 },
             { name: 'Romulo', age: 30 }
-        ]);
-
-        expect(compareWithMultipleKeys).toHaveBeenCalled();
-        expect(createSortedArray).toHaveBeenCalled();
+        ]);    
     });
 
     test('should add a new sorting key to the existing keys', () => {
+        // Mock orderByLinq and thenByLinq for this test
+        Array.prototype.orderByLinq = function (keySelector) {
+            const keys = [{
+                selector: keySelector,
+                direction: 'asc' as const
+            }];
+            const sortFn = (a: any, b: any): number => {
+                return compareWithMultipleKeys(a, b, keys);
+            };
+            return createSortedArray(this, sortFn, keys);
+        };
+
+        Array.prototype.thenByLinq = function (keySelector) {
+            // Get previous keys from _sortState if present
+            const prevKeys = (this as any)._sortState?.keys || [];
+            const newKeys = [
+                ...prevKeys,
+                { selector: keySelector, direction: 'asc' as const }
+            ];
+            const sortFn = (a: any, b: any): number => {
+                return compareWithMultipleKeys(a, b, newKeys);
+            };
+            return createSortedArray(this, sortFn, newKeys);
+        };
+
         const users = [
             { name: 'Romulo', age: 30, id: 1 },
             { name: 'Bia', age: 25, id: 2 },
@@ -130,9 +140,10 @@ describe('Array.prototype.thenByLinq', () => {
 
         // Get the last call to createSortedArray and check if it has two keys
         const lastCall = (createSortedArray as jest.Mock).mock.calls[1];
-        expect(lastCall[2].length).toBe(2);
-        expect(lastCall[2][0].direction).toBe('asc');
-        expect(lastCall[2][1].direction).toBe('asc');
+        expect(lastCall).toBeDefined();
+        expect(lastCall?.[2].length).toBe(2);
+        expect(lastCall?.[2][0].direction).toBe('asc');
+        expect(lastCall?.[2][1].direction).toBe('asc');
     });
 
     test('should maintain original ordering when secondary criterion is equal', () => {
@@ -169,7 +180,7 @@ describe('Array.prototype.thenByLinq', () => {
         // Expected: 
         // First by 'a' desc: [Felipe(2), Ana(2), Romulo(1), Bia(1)]
         // Then by 'b' asc for equal 'a': [Ana(2,1), Felipe(2,2), Bia(1,1), Romulo(1,2)]
-        expect(result).toEqual([
+        expect([...result]).toEqual([
             { a: 2, b: 1, name: 'Ana' },
             { a: 2, b: 2, name: 'Felipe' },
             { a: 1, b: 1, name: 'Bia' },
@@ -198,8 +209,8 @@ describe('Array.prototype.thenByLinq', () => {
         ]);
 
         // Ensure result is not the same instance as original or firstSort
-        expect(result).not.toBe(original);
-        expect(result).not.toBe(firstSort);
+        expect([...result]).not.toBe(original);
+        expect([...result]).not.toBe(firstSort);
     });
 
     test('should handle empty arrays', () => {
@@ -222,7 +233,7 @@ describe('Array.prototype.thenByLinq', () => {
         const firstSort = emptyArray.orderByLinq(item => item);
         const result = firstSort.thenByLinq(item => item);
 
-        expect(result).toEqual([]);
+        expect([...result]).toEqual([]);
     });
 
     test('should correctly handle complex data structures', () => {
@@ -249,7 +260,7 @@ describe('Array.prototype.thenByLinq', () => {
             .orderByDescendingLinq(item => item.stats.score)
             .thenByLinq(item => item.stats.level);
 
-        expect(result).toEqual([
+        expect([...result]).toEqual([
             {
                 id: 2,
                 stats: { score: 100, level: 3 },

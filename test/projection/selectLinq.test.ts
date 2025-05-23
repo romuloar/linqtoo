@@ -1,8 +1,4 @@
-import { addSelectLinq } from '../../src/methods/projection/selectLinq';
-
-beforeAll(() => {
-    addSelectLinq();
-});
+import '../../src/index';
 
 describe('selectLinq', () => {
     it('should project each element to a new form', () => {

@@ -1,8 +1,4 @@
-import { addCountLinq } from '../../src/methods/aggregation-quantifiers/countLinq';
-
-beforeAll(() => {
-    addCountLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.count', () => {
     it('should return the total number of items when no predicate is provided', () => {

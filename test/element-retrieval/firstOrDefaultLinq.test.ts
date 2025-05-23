@@ -1,8 +1,4 @@
-import { addFirstOrDefaultLinq } from '../../src/methods/element-retrieval/firstOrDefaultLinq';
-
-beforeAll(() => {
-    addFirstOrDefaultLinq();
-});
+import '../../src/index';
 
 describe('firstOrDefault', () => {
     it('should return the first element in a non-empty array', () => {

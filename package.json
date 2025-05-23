@@ -1,23 +1,30 @@
 {
   "name": "linqtoo",
-  "version": "2.0.0",
-  "description": "Extends TypeScript arrays with powerful LINQ-like query and manipulation methods.",
+  "version": "2.0.1",
+  "description": "Extends TypeScript/JavaScript arrays with powerful LINQ-like query and manipulation methods.",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "src/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src/index.d.ts"
   ],
   "scripts": {
     "test": "jest",
     "build": "tsup",
+    "build:browser": "tsup src/linqtoo.ts --format iife --minify --out-dir bundle",
     "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/romuloar/linqtoo.git"
   },
-  "keywords": [ "linq", "collection", "typescript", "javascript" ],
+  "keywords": [
+    "linq",
+    "collection",
+    "typescript",
+    "javascript"
+  ],
   "author": "Romulo Ribeiro",
   "license": "ISC",
   "bugs": {

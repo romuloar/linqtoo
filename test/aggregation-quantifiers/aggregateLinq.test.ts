@@ -1,8 +1,4 @@
-import { addAggregateLinq } from '../../src/methods/aggregation-quantifiers/aggregateLinq';
-
-beforeAll(() => {
-    addAggregateLinq();
-});
+import '../../src/index';
 
 describe('aggregate', () => {
     it('should sum numbers', () => {

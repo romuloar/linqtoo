@@ -1,8 +1,4 @@
-import { addAllLinq } from '../../src/methods/aggregation-quantifiers/allLinq';
-
-beforeAll(() => {
-    addAllLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.all', () => {
     it('should return true for empty array', () => {

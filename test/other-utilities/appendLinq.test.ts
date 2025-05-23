@@ -1,8 +1,4 @@
-import { addAppendLinq } from '../../src/methods/other-utilities/appendLinq';
-
-beforeAll(() => {
-    addAppendLinq();
-});
+import '../../src/index';
 
 describe('append', () => {
     it('should append item to the end of the array', () => {

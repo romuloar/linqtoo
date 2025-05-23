@@ -1,8 +1,4 @@
-import { addContainsLinq } from '../../src/methods/aggregation-quantifiers/containsLinq';
-
-beforeAll(() => {
-    addContainsLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.contains', () => {
     it('should return true if the array contains the item', () => {

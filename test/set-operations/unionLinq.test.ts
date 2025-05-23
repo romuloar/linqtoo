@@ -1,8 +1,5 @@
-import { addUnionLinq } from '../../src/methods/set-operations/unionLinq';
+import '../../src/index';
 
-beforeAll(() => {
-    addUnionLinq();
-});
 
 describe('unionLinq', () => {
     it('should union two number arrays', () => {
@@ -17,7 +14,7 @@ describe('unionLinq', () => {
     it('should union object arrays by reference (without comparer)', () => {
         const a = [{ id: 1 }];
         const b = [{ id: 1 }];
-        expect(a.unionLinq(b)).toHaveLength(2); // Diferentes referências
+        expect(a.unionLinq(b)).toHaveLength(2); // Diferentes referï¿½ncias
     });
 
     it('should union object arrays using a custom comparer', () => {

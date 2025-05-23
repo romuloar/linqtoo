@@ -1,8 +1,4 @@
-import { addRepeatLinq } from '../../src/methods/other-utilities/repeatLinq';
-
-beforeAll(() => {
-    addRepeatLinq();
-});
+import '../../src/index';
 
 describe('Array.repeat', () => {
     it('should repeat a string value', () => {

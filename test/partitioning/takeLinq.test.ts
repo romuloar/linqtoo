@@ -1,8 +1,4 @@
-import { addTakeLinq } from '../../src/methods/partitioning/takeLinq';
-
-beforeAll(() => {
-    addTakeLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.take', () => {
   test('method is added to Array prototype', () => {

@@ -1,8 +1,4 @@
-import { addExceptLinq } from '../../src/methods/set-operations/exceptLinq';
-
-beforeAll(() => {
-    addExceptLinq();
-});
+import '../../src/index';
 
 describe('exceptLinq', () => {
     it('should return elements not in the second array (numbers)', () => {
@@ -14,7 +10,7 @@ describe('exceptLinq', () => {
     });
 
     it('should return all elements if no matches in second array', () => {
-        expect(['Romulo', 'Bia', 'Felipe'].exceptLinq(['Zé'])).toEqual(['Romulo', 'Bia', 'Felipe']);
+        expect(['Romulo', 'Bia', 'Felipe'].exceptLinq(['Zï¿½'])).toEqual(['Romulo', 'Bia', 'Felipe']);
     });
 
     it('should return empty if all elements match', () => {

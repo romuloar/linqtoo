@@ -1,8 +1,4 @@
-import { addEmptyLinq } from '../../src/methods/other-utilities/emptyLinq';
-
-beforeAll(() => {
-    addEmptyLinq();
-});
+import '../../src/index';
 
 describe('Array.empty', () => {
     it('should return an empty array', () => {

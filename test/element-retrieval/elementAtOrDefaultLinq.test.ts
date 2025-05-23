@@ -1,8 +1,4 @@
-import { addElementAtOrDefaultLinq } from '../../src/methods/element-retrieval/elementAtOrDefaultLinq';
-
-beforeAll(() => {
-    addElementAtOrDefaultLinq();
-});
+import '../../src/index';
 
 describe('elementAtOrDefault', () => {
     it('should return the element at the specified index', () => {

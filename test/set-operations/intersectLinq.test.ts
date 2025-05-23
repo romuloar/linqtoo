@@ -1,8 +1,4 @@
-import { addIntersectLinq } from '../../src/methods/set-operations/intersectLinq';
-
-beforeAll(() => {
-  addIntersectLinq();
-});
+import '../../src/index';
 
 describe('intersectLinq', () => {
     it('should return common numbers', () => {

@@ -1,8 +1,5 @@
-import { addPrependLinq } from '../../src/methods/other-utilities/prependLinq';
+import '../../src/index';
 
-beforeAll(() => {
-    addPrependLinq();
-});
 
 describe('Array.prototype.prepend', () => {
     it('should add an element at the beginning of the array', () => {

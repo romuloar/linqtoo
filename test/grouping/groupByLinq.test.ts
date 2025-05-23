@@ -1,8 +1,4 @@
-import { addGroupByLinq } from '../../src/methods/grouping/groupByLinq';
-
-beforeAll(() => {
-    addGroupByLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.groupBy', () => {
     it('should group numbers by even or odd', () => {

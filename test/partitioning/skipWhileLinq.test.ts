@@ -1,8 +1,5 @@
-import { addSkipWhileLinq } from '../../src/methods/partitioning/skipWhileLinq';
+import '../../src/index';
 
-beforeAll(() => {
-    addSkipWhileLinq();
-});
 
 describe('skipWhileLinq', () => {
     it('should skip elements while condition is true and include the rest', () => {

@@ -1,8 +1,4 @@
-import { addMaxLinq } from '../../src/methods/aggregation-quantifiers/maxLinq';
-
-beforeAll(() => {
-    addMaxLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.max', () => {
     it('should return the maximum number in a numeric array', () => {

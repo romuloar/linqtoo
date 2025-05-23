@@ -1,8 +1,4 @@
-import { addAverageLinq } from '../../src/methods/aggregation-quantifiers/averageLinq';
-
-beforeAll(() => { 
-    addAverageLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.average', () => {
     it('should calculate average of numbers', () => {

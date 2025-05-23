@@ -1,8 +1,4 @@
-import { addWhereLinq } from '../../src/methods/filtering/whereLinq';
-
-beforeAll(() => {
-    addWhereLinq();
-});
+import '../../src/index';
 
 describe('where', () => {
     it('should return elements that satisfy the predicate', () => {

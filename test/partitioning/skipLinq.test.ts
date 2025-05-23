@@ -1,8 +1,4 @@
-import { addSkipLinq } from '../../src/methods/partitioning/skipLinq';
-
-beforeAll(() => {
-    addSkipLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.skip', () => {
   test('method is added to Array prototype', () => {

@@ -1,8 +1,4 @@
-import { addLastLinq } from '../../src/methods/element-retrieval/lastLinq';
-
-beforeAll(() => {
-    addLastLinq();
-});
+import '../../src/index';
 
 describe('last', () => {
     it('should return the last element in a non-empty array', () => {

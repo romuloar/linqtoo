@@ -1,8 +1,4 @@
-import { addAnyLinq } from '../../src/methods/aggregation-quantifiers/anyLinq';
-
-beforeAll(() => {
-    addAnyLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.any', () => {
     it('should return true if array has any elements without predicate', () => {

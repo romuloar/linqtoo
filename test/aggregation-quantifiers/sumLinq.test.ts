@@ -1,4 +1,4 @@
-import { addSumLinq } from '../../src/methods/aggregation-quantifiers/sumLinq';
+import '../../src/index';
 
 // Extend Array interface globally for TypeScript
 declare global {
@@ -6,10 +6,6 @@ declare global {
     sumLinq(selector?: (item: T) => number): number;
   }
 }
-
-beforeAll(() => {
-    addSumLinq();
-});
 
 describe('Array.prototype.sum', () => {
   test('method is added to Array prototype', () => {

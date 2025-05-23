@@ -1,8 +1,4 @@
-import { addDefaultIfEmptyLinq } from '../../src/methods/other-utilities/defaultIfEmptyLinq';
-
-beforeAll(() => {
-    addDefaultIfEmptyLinq();
-});
+import '../../src/index';
 
 describe('defaultIfEmptyLinq', () => {
     it('should return the original array if not empty', () => {

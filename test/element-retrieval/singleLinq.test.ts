@@ -1,8 +1,4 @@
-import { addSingleLinq } from '../../src/methods/element-retrieval/singleLinq';
-
-beforeAll(() => {
-    addSingleLinq();
-});
+import '../../src/index';
 
 describe('single', () => {
     it('should return the only element when no predicate and single element', () => {

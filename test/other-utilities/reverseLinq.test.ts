@@ -1,8 +1,4 @@
-import { addReverseLinq } from '../../src/methods/other-utilities/reverseLinq';
-
-beforeAll(() => {
-    addReverseLinq();
-});
+import '../../src/index';
 
 describe('reverseLinq', () => {
     it('should reverse a number array', () => {

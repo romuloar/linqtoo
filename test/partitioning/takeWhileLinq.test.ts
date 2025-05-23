@@ -1,8 +1,4 @@
-import { addTakeWhileLinq } from '../../src/methods/partitioning/takeWhileLinq';
-
-beforeAll(() => {
-    addTakeWhileLinq();
-});
+import '../../src/index';
 
 describe('takeWhileLinq', () => {
     it('should take items while the predicate is true', () => {

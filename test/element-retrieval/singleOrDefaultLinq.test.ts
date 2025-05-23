@@ -1,8 +1,4 @@
-import { addSingleOrDefaultLinq } from '../../src/methods/element-retrieval/singleOrDefaultLinq';
-
-beforeAll(() => {
-    addSingleOrDefaultLinq();
-});
+import '../../src/index';
 
 describe('singleOrDefault', () => {
     it('should return the single element if only one exists', () => {

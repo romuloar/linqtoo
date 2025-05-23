@@ -1,8 +1,4 @@
-import { addFirstLinq } from '../../src/methods/element-retrieval/firstLinq';
-
-beforeAll(() => {
-    addFirstLinq();
-});
+import '../../src/index';
 
 describe('first', () => {
     it('should return the first element in a non-empty array', () => {

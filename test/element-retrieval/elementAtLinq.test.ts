@@ -1,8 +1,4 @@
-import { addElementAtLinq } from '../../src/methods/element-retrieval/elementAtLinq';
-
-beforeAll(() => {
-    addElementAtLinq();
-});
+import '../../src/index';
 
 describe('elementAt', () => {
     it('should return the element at the specified index', () => {

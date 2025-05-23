@@ -1,3 +1,4 @@
+/// <reference path="./index.d.ts" />
 //aggregation-quantifiers
 import { addAggregateLinq } from './methods/aggregation-quantifiers/aggregateLinq';
 import { addAllLinq } from './methods/aggregation-quantifiers/allLinq';

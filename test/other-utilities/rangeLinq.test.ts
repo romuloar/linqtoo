@@ -1,8 +1,4 @@
-import { addRangeLinq } from '../../src/methods/other-utilities/rangeLinq';
-
-beforeAll(() => {
-    addRangeLinq();
-});
+import '../../src/index';
 
 describe('Array.range', () => {
     it('should generate a range of numbers', () => {

@@ -7,11 +7,12 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "types": ["node", "jest"],
-    "lib": ["es2018"],
+    "types": [ "node", "jest" ],
+    "lib": [ "es2018" ],
     "declaration": false,
     "noEmit": false
   },
-  "include": ["src/**/*", "src/global.d.ts"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "typeRoots": [ "./src", "./node_modules/@types" ],
+  "include": [ "src/**/*", "src/index.d.ts", "test", "src/**/*.ts"],  
+  "exclude": [ "node_modules", "**/*.test.ts" ]
 }

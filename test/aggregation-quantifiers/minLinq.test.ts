@@ -1,8 +1,4 @@
-import { addMinLinq } from '../../src/methods/aggregation-quantifiers/minLinq';
-
-beforeAll(() => {
-    addMinLinq();
-});
+import '../../src/index';
 
 describe('Array.prototype.min', () => {
     it('should return the minimum number in a numeric array', () => {
